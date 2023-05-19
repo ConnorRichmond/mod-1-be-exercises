@@ -46,3 +46,14 @@ end
 p first_num_thats_square_is_above_100(nums)
 
 # should return the integer 11
+
+
+
+def double(numbers)
+    doubles = numbers.map do |number|
+      number * 2
+    end
+end
+  
+numbers = [1, 2, 3, 4, 5]
+p double(numbers)
