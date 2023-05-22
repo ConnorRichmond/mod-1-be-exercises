@@ -16,11 +16,11 @@ describe Apartment do
     bathroom = Room.new('bathroom')
 
     apartment.add_room(bathroom)
-    apartment.add_room(Room.new('laundry'))
-    apartment.add_room(Room.new('kitchen'))
-    apartment.add_room(Room.new('bedroom'))
+    apartment.add_room(laundry = Room.new('laundry'))
+    apartment.add_room(kitchen = Room.new('kitchen'))
+    apartment.add_room(bedroom = Room.new('bedroom'))
 
-    # expect(apartment.rooms).to eq(apartment.rooms.map(&'bathroom', 'laundry', 'kitchen', 'bedroom')
+    expect(apartment.rooms).to eq([bathroom, laundry, kitchen, bedroom])
 
   end
 
