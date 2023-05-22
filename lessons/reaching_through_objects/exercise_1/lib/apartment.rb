@@ -1,21 +1,26 @@
 class Apartment
 
-  attr_reader :rented
+  attr_reader :rooms
 
-  def initialize(rented = false)
-    @rented = rented
+  def initialize
+    @rented = false
+    @rooms = []
   end
 
   def is_rented?
-    if @rented == true
-      true
-    else
-      false
-    end
+    @rented
   end
 
   def rent
     @rented = true
+  end
+
+  def add_room(room)
+    if @rooms.length < 4
+      @rooms << room
+    else
+      puts "Cannot add more than 4 rooms."
+    end
   end
 
 end
