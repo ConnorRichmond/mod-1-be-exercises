@@ -21,8 +21,10 @@ describe Apartment do
     apartment.add_room(bedroom = Room.new('bedroom'))
 
     expect(apartment.rooms).to eq([bathroom, laundry, kitchen, bedroom])
-
+    expect(apartment.list_rooms_by_name_alphabetically).to eq(['bathroom', 'bedroom', 'kitchen', 'laundry'])
   end
+
+  
 
 
 end

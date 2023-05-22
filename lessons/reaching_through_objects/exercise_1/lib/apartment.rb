@@ -23,4 +23,8 @@ class Apartment
     end
   end
 
+  def list_rooms_by_name_alphabetically
+    @rooms.map(&:name).sort
+  end
+
 end
