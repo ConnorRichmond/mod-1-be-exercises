@@ -14,7 +14,7 @@ puts sam.say_hello
 
 
 # 3. Can you call #say_hello on the User class without instantiating it first? What happens?   (Ex: User.say_hello)
-User.say_hello
+# User.say_hello
 
 # 4. How can we access a method in our class that can say hello to someone WITHOUT instantiating a new object?
 # ...
