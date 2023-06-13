@@ -35,26 +35,34 @@ describe Reunion do
       @activity1 = Activity.new("Brunch")
       @activity2 = Activity.new("Basketball")
       @activity3 = Activity.new("Bouncy Castle")
+      @reunion.add_activity(@activity1)
+      @reunion.add_activity(@activity2)
+      @reunion.add_activity(@activity3)
+
+      @activity1.add_participant("Maria", 20)
+      @activity1.add_participant("Luther", 40)
+
+      @activity2.add_participant("Maria", 10)
+      @activity2.add_participant("Kyle", 30)
+
+      @activity3.add_participant("Kyle", 60)
+      @activity3.add_participant("Luther", 60)
     end
 
-    context '#total_cost_reunion' do
+    context 'total cost and owned for reunion' do
       it 'shows total cost' do
-        @reunion.add_activity(@activity1)
-        @reunion.add_activity(@activity2)
-        @reunion.add_activity(@activity3)
-
-        @activity1.add_participant("Maria", 20)
-        @activity1.add_participant("Luther", 40)
-
-        @activity2.add_participant("Maria", 20)
-        @activity2.add_participant("Kyle", 30)
-
-        @activity3.add_participant("Kyle", 30)
-        @activity3.add_participant("Luther", 40)
-
-        expect(@reunion.total_cost_reunion).to eq(180)
-
+        expect(@reunion.total_cost_reunion).to eq(220)
       end
+
+      it 'shows a participant and what they owe/are owed' do
+        expected = {
+          "Maria" => 20,
+          "Luther" => -10,
+          "Kyle" => -10
+        }
+        expect(@reunion.total_owed_reunion).to eq(expected)
+      end
+
     end
 
   end
