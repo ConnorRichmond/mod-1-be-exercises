@@ -12,4 +12,10 @@ class Reunion
     @activities.push(activity)
   end
 
+  def total_cost_reunion
+    @activities.sum do |activity|
+      activity.total_cost
+    end
+
+  end
 end
