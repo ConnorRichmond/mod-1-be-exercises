@@ -16,6 +16,17 @@ class Reunion
     @activities.sum do |activity|
       activity.total_cost
     end
-
   end
+
+  def total_owed_reunion
+    owed = Hash.new(0)
+    @activities.each do |activity|
+      activity.owed.each do |participant, ammount_owed|
+        owed[participant] += ammount_owed
+      end
+    end
+    owed
+  end
+
+
 end
