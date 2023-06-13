@@ -28,5 +28,13 @@ class Reunion
     owed
   end
 
+  def summary
+    summary = ""
+    total_owed_reunion.each do |participant, money_owed|
+      summary += "#{participant}: #{money_owed}\n"
+    end
+    summary
+  end
+
 
 end
