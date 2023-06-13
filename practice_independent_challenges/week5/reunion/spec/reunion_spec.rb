@@ -63,6 +63,15 @@ describe Reunion do
         expect(@reunion.total_owed_reunion).to eq(expected)
       end
 
+      it 'prints summary or participant and what they owe' do
+        expected_owed = (
+          "Maria: 20\n" +
+          "Luther: -10\n" +
+          "Kyle: -10\n"
+          )
+        expect(@reunion.summary).to eq(expected_owed)
+      end
+
     end
 
   end
