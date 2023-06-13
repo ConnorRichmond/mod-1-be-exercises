@@ -1,4 +1,4 @@
-require './lib/activity'
+require 'spec_helper'
 
 
 describe Activity do
@@ -51,13 +51,13 @@ describe Activity do
       @activity.add_participant("Luther", 40)
     end
 
-    context 'splits costs with participants' do
+    context 'splits costs' do
       it 'splits costs' do
         expect(@activity.total_cost).to eq(60)
         expect(@activity.split).to eq(30)
       end
 
-      it 'what is owed between participants' do
+      it 'what is owed after costs' do
         expect(@activity.owed).to eq({
           "Maria" => 10,
           "Luther" => -10
